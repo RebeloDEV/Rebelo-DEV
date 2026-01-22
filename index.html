@@ -175,51 +175,27 @@
 
                             
 <script>
-// Corrigido: usa FormData que é mais seguro
-var form = document.querySelector('form');
-
-if (form) {
-    form.onsubmit = function(e) {
-        e.preventDefault();
-        
-        // Usa FormData para pegar todos os valores automaticamente
-        var formData = new FormData(form);
-        
-        // Converte para objeto simples
-        var data = {
-            nome: formData.get('nome') || '',
-            email: formData.get('email') || '',
-            telefone: formData.get('telefone') || '',
-            mensagem: formData.get('mensagem') || ''
-        };
-        
-        // Envia para FormSubmit
-        fetch('https://formsubmit.co/rebelo03.dev@gmail.com', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(function(response) {
-            if (response.ok) {
-                alert('✅ Mensagem enviada com sucesso!');
-                form.reset();
-            } else {
-                alert('❌ Erro ao enviar.');
-            }
-        })
-        .catch(function() {
-            alert('❌ Erro de conexão.');
-        });
-        
-        return false;
-    };
-}
+// Versão SUPER SIMPLES
+document.querySelector('form').onsubmit = function(e) {
+    e.preventDefault();
+    
+    alert('⚠️ Enviando para: rebelo03.dev@gmail.com');
+    
+    // Envia de forma direta
+    fetch('https://formsubmit.co/rebelo03.dev@gmail.com', {
+        method: 'POST',
+        body: new FormData(this)
+    })
+    .then(() => alert('✅ Enviado!'))
+    .catch(() => alert('❌ Erro!'));
+    
+    return false;
+};
 </script>
 
 </body>
 </html>
+
 
 
 
