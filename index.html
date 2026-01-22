@@ -175,41 +175,51 @@
 
                             
 <script>
+// Corrigido: usa FormData que é mais seguro
 var form = document.querySelector('form');
 
-form.onsubmit = function(e) {
-    e.preventDefault();
-    
-    var nome = form.nome.value;
-    var email = form.email.value;
-    var telefone = form.telefone.value;
-    var mensagem = form.mensagem.value;
-    
-    var dados = {
-        nome: nome,
-        email: email,
-        telefone: telefone,
-        mensagem: mensagem
+if (form) {
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        
+        // Usa FormData para pegar todos os valores automaticamente
+        var formData = new FormData(form);
+        
+        // Converte para objeto simples
+        var data = {
+            nome: formData.get('nome') || '',
+            email: formData.get('email') || '',
+            telefone: formData.get('telefone') || '',
+            mensagem: formData.get('mensagem') || ''
+        };
+        
+        // Envia para FormSubmit
+        fetch('https://formsubmit.co/rebelo03.dev@gmail.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(function(response) {
+            if (response.ok) {
+                alert('✅ Mensagem enviada com sucesso!');
+                form.reset();
+            } else {
+                alert('❌ Erro ao enviar.');
+            }
+        })
+        .catch(function() {
+            alert('❌ Erro de conexão.');
+        });
+        
+        return false;
     };
-    
-    fetch('https://formsubmit.co/rebelo03.dev@gmail.com', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dados)
-    })
-    .then(function() {
-        alert('Mensagem enviada com sucesso!');
-        form.reset();
-    })
-    .catch(function() {
-        alert('Erro ao enviar mensagem.');
-    });
-};
+}
 </script>
 
 </body>
 </html>
+
 
 
