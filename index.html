@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- FIM GOOGLE FONTS-->
+    <!--BOOTSTRAP ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--FIM BOOTSTRAP ICONS-->
     <link rel="stylesheet" href="style.css">
     <title>Rebelo DEV</title>
 </head>
@@ -16,14 +19,14 @@
     <header>
         <div class="interface">
             <div class="logo">
-                <a href="#">
-                    <img src="images/logo.png" alt="LOGO da Agencia REBELO" width="80px">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="LOGO RebeloDEV" width="80px">
                 </a>
             </div><!--logo-->
 
             <nav class="menu-desktop">
                 <ul>
-                    <li><a href="#">Início</a></li>
+                    <li><a href="index.html">Início</a></li>
                     <li><a href="#">Especialidades</a></li>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Projetos</a></li>
@@ -39,6 +42,7 @@
     </header>
 
     <main>
+
         <section class="topo-do-site">
             <div class="interface">
                 <div class="flex">
@@ -56,12 +60,117 @@
                     </div><!--txt topo site-->
 
                     <div class="img-topo-site">
-                        <img src="images/pessoa.png" alt="pessoa" width="470px">
+                        <img src="images/pessoa.png" alt="pessoa">
                     </div><!--img topo site-->
                 </div><!--flex-->
             </div><!--interface-->
         </section><!--topo do site-->
+
+        <section class="especialidades">
+            <div class="interface">
+                <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Especialidade1</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error obcaecati, sunt eligendi iure quidem similique provident aut maxime? Veniam ipsa quam tenetur accusamus cum, magnam facere ab nemo odit consequatur?</p>
+                    </div><!--especialidades box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Especialidade2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, libero voluptate. Facere molestiae porro optio odio est exercitationem repellendus, facilis labore esse suscipit maiores at officiis ullam non vitae enim!</p>
+                    </div><!--especialidades box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Especialidade3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, laboriosam? Provident voluptatum magnam ex cum pariatur maiores dolor ea, nulla id nisi dolorum, quae quam eius saepe vel ullam consequatur!</p>
+                    </div><!--especialidades box-->
+
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--especialidades-->
+
+        <section class="sobre">
+            <div class="interface">
+                <div class="flex">
+
+                    <div class="img-sobre">
+                        <img src="images/Minha-Imagem.png" alt="minhaimg" width="300px">
+                    </div><!--img sobre-->
+
+                    <div class="txt-sobre">
+                        <h2>MUITO PRAZER, <span>SOU CARLOS REBELO.</span></h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore animi vel odio nemo necessitatibus facere molestiae quia? Quis, voluptas exercitationem voluptatum repudiandae magnam nihil recusandae neque quia architecto sint temporibus.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, quam doloremque. Ducimus laborum placeat a. Dolorem recusandae iure distinctio temporibus libero magni corrupti, ducimus, nesciunt placeat eligendi ratione ut quidem.</p>
+
+                        <div class="btn-social">
+                            <a href="https://www.instagram.com/caduu.rebelo/"><button><i class="bi bi-instagram"></i></button></a>    
+                            <a href="https://github.com/RebeloDEV"><button><i class="bi bi-github"></i></button></a>
+                            <a href="https://www.linkedin.com/in/rebelodev/"><button><i class="bi bi-linkedin"></i></button></a>
+                        </div><!--btn social-->
+
+                    </div><!--txt sobre-->
+                    
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--sobre-->
+
+        <section class="portfolio">
+            <div class="interface">
+                <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
+                <div class="flex">
+                    <div class="img-port" style="background-image: url();">
+                        <div class="overlay">Projeto 1</div>
+                    </div><!--img port-->
+                    <div class="img-port" style="background-image: url();">
+                        <div class="overlay">Projeto 2</div>
+                    </div><!--img port-->
+                    <div class="img-port" style="background-image: url();">
+                        <div class="overlay">Projeto 3</div>
+                    </div><!--img port-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--portfolio-->
+
+        <section class="formulario">
+            <div class="interface">
+
+                <h2 class="titulo">FALA <span>COMIGO.</span></h2>
+
+                <form method="post" action="envia.php">
+                    <input type="text" name="nome" id="" placeholder="Seu nome" required>
+                    <input type="text" name="email" id="" placeholder="Seu email" required>
+                    <input type="text" name="telefone" id="" placeholder="Seu telefone">
+                    <textarea name="mensagem" id="" placeholder="Sua mensagem" required></textarea>
+                    <div class="btn-enviar"><input type="submit"></div>
+                </form>
+
+            </div><!--interface-->
+        </section><!--formulário-->
+
     </main>
+
+    <footer>
+        <div class="interface">  
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="images/logo.png" alt="logo RebeloDEV" width="80px">
+                    </div><!--logo footer-->
+                    <div class="btn-social">
+                        <a href="https://www.instagram.com/caduu.rebelo/"><button><i class="bi bi-instagram"></i></button></a>    
+                        <a href="https://github.com/RebeloDEV"><button><i class="bi bi-github"></i></button></a>
+                        <a href="https://www.linkedin.com/in/rebelodev/"><button><i class="bi bi-linkedin"></i></button><a>
+                    </div><!--btn social-->
+                </div>
+            </div><!--line footer-->    
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope-at-fill"></i><a href="mailto:contato@rebelo.com.br">contato@rebelo.com.br</a></p>
+            </div><!--line footer-->    
+    </div><!--interface-->
+    </footer>
 
 </body>
 </html>
