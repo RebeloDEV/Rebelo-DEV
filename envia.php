@@ -5,8 +5,8 @@
     $telefone = addslashes($_POST['telefone']);
     $mensagem = ($_POST['mensagem']);
 
-    $para = "rebelo03.dev@gmail.com"
-    $assunto = "Contato - Portfólio"
+    $para = "rebelo03.dev@gmail.com";
+    $assunto = "Contato - Portfólio";
 
     $corpo = "Nome: ".$nome."\n"."E-mail: ".$email."\n"."Telefone: ".$telefone."\n"."\n"."Mensagem: ".$mensagem;
 
@@ -15,5 +15,8 @@
     if(mail($para,$assunto,$corpo,$cabeca)){
         echo("E-mail enviado com sucesso!")
     }
+    else{
+        echo("Houve um erro ao enviar o e-mail");
+    }
 
-?>
+?>     
