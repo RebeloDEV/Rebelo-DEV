@@ -14,6 +14,50 @@
     <link rel="stylesheet" href="style.css">
     <title>Rebelo DEV</title>
 </head>
+
+<script>
+// Coloque este código antes do </body> no seu HTML
+
+// Encontra o formulário
+var form = document.querySelector('form');
+
+// Quando enviar o formulário
+form.onsubmit = function(e) {
+    // Impede o envio normal
+    e.preventDefault();
+    
+    // Pega os dados do formulário
+    var nome = form.nome.value;
+    var email = form.email.value;
+    var telefone = form.telefone.value;
+    var mensagem = form.mensagem.value;
+    
+    // Prepara os dados para enviar
+    var dados = {
+        nome: nome,
+        email: email,
+        telefone: telefone,
+        mensagem: mensagem
+    };
+    
+    // Envia para FormSubmit
+    fetch('https://formsubmit.co/rebelo03.dev@gmail.com', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(function() {
+        alert('Mensagem enviada com sucesso!');
+        form.reset();
+    })
+    .catch(function() {
+        alert('Erro ao enviar mensagem.');
+    });
+};
+</script>
+
 <body>
 
     <header>
