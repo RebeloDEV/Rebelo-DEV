@@ -33,9 +33,19 @@ body{
     cursor: pointer;
 }
 
-.btn-contato button:hover{
+button:hover, form .btn-enviar input:hover{
     box-shadow: 0px 0px 20px #00b7ffa4;
     transform: scale(1.05);
+}
+
+h2.titulo{
+    color: #fff;
+    font-size: 34px;
+    text-align: center;
+}
+
+h2.titulo span{
+    color: #00b7ff;
 }
 
 /* ESTILIZAÇÃO DO CABEÇALHO */
@@ -74,13 +84,17 @@ header nav li{
 /* ESTILIZAÇÃO DO TOPO DO SITE */
 
 section .topo-do-site{
- padding: 40px 4%;   
+ padding: 80px 4%;   
 }
 
 .topo-do-site .flex{
     align-items: center;
     justify-content: center;
     gap: 90px;
+}
+
+.topo-do-site .txt-topo-site{
+    margin-left: 40px;
 }
 
 .topo-do-site h1{
@@ -101,6 +115,7 @@ section .topo-do-site{
 .topo-do-site .img-topo-site img{
      position: relative;
      animation: flutuar 2s ease-in-out infinite alternate;
+     width: 500px;
 }
 
 @keyframes flutuar{
@@ -109,5 +124,250 @@ section .topo-do-site{
     }
     100%{
         top: 30px;
+    }
+}
+
+/* ESTILIZAÇÃO DAS ESPECIALIDADES */
+
+section.especialidades{
+    margin-top: 80px;
+    padding: 80px 4%;
+}
+
+section.especialidades .flex{
+    gap: 60px;
+}
+
+.especialidades .especialidades-box{
+    color: #fff;
+    padding: 40px;
+    border-radius: 30px;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.especialidades .especialidades-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ffffff5b;
+}
+
+.especialidades .especialidades-box i{
+    font-size: 60px;
+    color: #00b7ff;
+}
+
+.especialidades .especialidades-box h3{
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ESTILIZAÇÃO DO SOBRE */
+
+section.sobre{
+    padding: 100px 4%;
+    margin-top: 40px;
+}
+
+section.sobre .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+.img-sobre img{
+    width: 300px;
+}
+
+.sobre .txt-sobre{
+    color: #fff;
+}
+
+.sobre .txt-sobre h2{
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span{
+    color: #00b7ff;
+    display: block;
+}
+
+.sobre .txt-sobre p{
+    margin: 30px 0;
+    text-align: justify;
+}
+
+.btn-social button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #00b7ff;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: .2s;
+}
+
+/* ESTILIZAÇÃO DO PORTFÓLIO */
+
+section.portfolio{
+    padding: 80px 4%; 
+    box-shadow: 0 0 40px 10px #ffffff33;
+}
+
+section.portfolio .flex{
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+.img-port{
+    width: 360px;
+    height: 460px;
+    background-color: #00b7ff;
+    background-size: cover;
+    background-position: 100% 0%;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 8s;
+    position: relative;
+}
+
+.img-port:hover{
+    background-position: 100% 100%;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b8;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: .5s;
+}
+
+.overlay:hover{
+    opacity: 1;
+}
+
+/* ESTILIZAÇÃO DO FORMULÁRIO DE CONTATO */
+
+section.formulario{
+    padding: 80px 4%;
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form textarea{
+    width: 100%;
+    background-color: #242424;
+    border: 0;
+    outline: 0;
+    padding: 14px 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 15px;
+}
+
+form textarea{
+    resize: none;
+    min-height: 200px;
+    max-height: 400px;
+}
+
+form .btn-enviar{
+    margin-top: 20px;
+    text-align: center;
+}
+
+form .btn-enviar input{
+    width: 130px;
+    background-color: #02adf1;
+    color: #000;
+    font-weight: 700;
+    transition: .2s;
+}
+
+/* ESTILIZAÇÃO DO RODAPÉ */
+
+footer{
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #ffffff33;
+}
+
+footer .btn-social {
+    margin-left: auto;
+}
+
+footer .line-footer{
+    padding: 20px 0;
+}
+
+.borda{
+    border-top: 2px solid #02adf1;
+}
+
+footer .line-footer p i{
+    color: #02adf1;
+    font-size: 22px;
+}
+
+footer .line-footer p a{
+    margin-left: 7px;
+    color: #fff;
+}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 1020px){
+
+    /* CLASSES GERAIS */
+    .topo-do-site  .flex{
+        flex-direction: column-reverse;
+    }
+
+    .flex{
+        flex-direction: column;
+    }
+
+    /* CABEÇALHO */ 
+    .menu-desktop, .btn-contato{
+        display: none;
+    }
+
+    /* TOPO DO SITE */ 
+    section.topo-do-site{   
+        padding: 5px 0;
+    }
+
+    .topo-do-site .img-topo-site img{
+        width: 350px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio .flex{
+        align-items: center;
+    }
+
+    .portfolio .img-port{
+        margin: 30px 0;
     }
 }
