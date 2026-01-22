@@ -175,13 +175,11 @@
 
                             
 <script>
-// Versão SUPER SIMPLES
 document.querySelector('form').onsubmit = function(e) {
     e.preventDefault();
     
     alert('⚠️ Enviando para: rebelo03.dev@gmail.com');
     
-    // Envia de forma direta
     fetch('https://formsubmit.co/rebelo03.dev@gmail.com', {
         method: 'POST',
         body: new FormData(this)
@@ -195,6 +193,7 @@ document.querySelector('form').onsubmit = function(e) {
 
 </body>
 </html>
+
 
 
 
